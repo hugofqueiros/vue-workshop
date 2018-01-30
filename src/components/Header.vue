@@ -8,7 +8,7 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <router-link to="/" activeClass="active" tag="li"><a>Home</a></router-link>
-                    <router-link to="/whatever" activeClass="active" tag="li"><a>Whatever</a></router-link>
+                    <router-link to="/components" activeClass="active" tag="li"><a>Components</a></router-link>
                 </ul>
                 <strong class="navbar-text navbar-right">Wallet: {{ bitcoin }}</strong>
                 <ul class="nav navbar-nav navbar-right">
