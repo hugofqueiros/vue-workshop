@@ -8,9 +8,10 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <router-link to="/" activeClass="active" tag="li"><a>Home</a></router-link>
-                    <router-link to="/components" activeClass="active" tag="li"><a>Components</a></router-link>
+                    <router-link to="/components" tag="li"><a>Components</a></router-link>
+                    <router-link to="/dc" tag="li"><a>DC</a></router-link>
                 </ul>
-                <strong class="navbar-text navbar-right">Wallet: {{ bitcoin }}</strong>
+                <strong class="navbar-text navbar-right">Wallet: {{ bitcoin | currency }}</strong>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#" @click="endDay">End Day</a></li>
                     <li

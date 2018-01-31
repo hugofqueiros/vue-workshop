@@ -42,6 +42,19 @@
     <p>VueJs is cool - {{name}}</p>
     <input type="text" v-model="name">
 
+    <hr>
+    <div>
+      <div class="demo" v-bind:class="{red: attachRed}"></div>
+      <div class="demo" @click="attachRed = !attachRed" :class="{red: attachRed, blue: !attachRed}"></div>
+      <div class="demo" :class="[color, {red: attachRed}]"></div>
+      <hr>
+      <div class="demo" :style="{backgroundColor: color}"></div>
+      <!-- for some reason this is not working -->
+      <div class="demo" :style="myStyle"></div>
+      <hr>
+      <input type="type" v-model="color">
+    </div>
+
   </div>
 </template>
 
@@ -56,7 +69,10 @@ export default {
       x: 0,
       y: 0,
       name: '',
-      val: ''
+      val: '',
+      attachRed: false,
+      color: 'green',
+      color2: 'gray'
     }
   },
   methods: {
@@ -80,6 +96,12 @@ export default {
     alertMe: function() {
       alert('Alert!');
     },
+    myStyle: function() {
+      return {
+        width: this.width + 'px',
+        backgroundColor: 'green'
+      }
+    }
   },
   // async things
   watch: {
@@ -92,3 +114,26 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.demo {
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+    display: inline-block;
+    margin: 10px;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+</style>
+
